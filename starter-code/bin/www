@@ -34,6 +34,6 @@ server.on('error', error => {
      throw error;
  }
 });
-server.listen(process.env.PORT, () => {
+server.listen(process.env.PORT || 'https://irongag.herokuapp.com', () => {
  console.log(`Listening on http://localhost:${process.env.PORT}`);
 });
