@@ -10,14 +10,21 @@
 <body>
 
 <div class="navigationBar">
-  <a class="navigationEntry" href="">Home</a>
+  <a class="navigationEntry" href="/">Home</a>
+  {{#unless session}}
   <a class="navigationEntry" href="log-In">Login</a>
   <a class="navigationEntry" href="sign-Up">Sign Up</a>
-  <a class="navigationEntry" href="upload">Upload</a>
+  {{/unless}}
+  {{#if session}}
+  <a class="navigationEntry" href="">Profile</a>
+  <a class="navigationEntry" href="upload">+ Upload</a>
+  <form action="/logout" method="post">
+  <button type="submit">Log-Out</button>
+  </form>
+  {{/if}}
 </div>
 
   {{{body}}}
 
-  <script src="/javascripts/script.js"></script>
 </body>
 </html>
