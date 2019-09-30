@@ -13,7 +13,7 @@ const MongoStore = require("connect-mongo")(session);
 const multer = require("multer");
 
 mongoose
- .connect('mongodb://localhost/irongag', {useNewUrlParser: true})
+ .connect('mongodb://localhost/irongag' || `${process.env.MONGO_URI}`, {useNewUrlParser: true})
  .then(x => {
    console.log(`Connected to Mongo! Database name: "${x.connections[0].name}"`)
  })
@@ -31,7 +31,7 @@ const app = express();
 
 var storage = multer.diskStorage({
   destination: function(req, file, cb) {
-      cb(null, 'uploads/');
+      cb(null, 'public/userUploads/');
    },
   filename: function (req, file, cb) {
       cb(null , file.originalname);
@@ -40,7 +40,7 @@ var storage = multer.diskStorage({
 
 var upload = multer({ storage: storage })
 
-app.post('/single', upload.single('post'), (req, res) => {
+app.post('/singleFile', upload.single('post'), (req, res) => {
   try {
     res.send(req.file);
   }catch(err) {

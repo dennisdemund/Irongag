@@ -1,9 +1,14 @@
-var mongoose = require('mongoose');
-var Schema = mongoose.Schema;
+const mongoose = require("mongoose");
+const Schema   = mongoose.Schema;
 
-var uploadSchema = new Schema({
-  path:  { type: String },
-  caption: { type: String }
-  });
+const pictureSchema = new Schema({
+  name: String,
+  path: String,
+  originalName: String
 
-module.exports = mongoose.model('Upload', uploadSchema);
+}, {
+  timestamps: { createdAt: "created_at", updatedAt: "updated_at" }
+});
+
+const Picture = mongoose.model("Picture", pictureSchema);
+module.exports = Picture;
