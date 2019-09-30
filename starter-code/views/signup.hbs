@@ -1,0 +1,22 @@
+<h2>Become a member</h2>
+
+<form action="/sign-Up" method="post">
+  <label for="">Username</label>
+  <input type="text" name="username">
+
+    <label for="">Email Address</label>
+  <input type="text" name="email">
+
+  <label for="">Password:</label>
+  <input type="text" name="password">
+
+  <button type="submit">Sign Up</button>
+</form>
+
+
+ <button><a href="/">Return</a></button>
+
+
+{{#if errorMessage}}
+<div class="error-message">{{ errorMessage }}</div>
+{{/if}}
