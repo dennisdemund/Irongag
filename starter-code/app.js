@@ -10,6 +10,7 @@ const logger       = require('morgan');
 const path         = require('path');
 const session    = require("express-session");
 const MongoStore = require("connect-mongo")(session);
+const multer = require("multer");
 
 mongoose
  .connect('mongodb://localhost/irongag', {useNewUrlParser: true})
@@ -23,6 +24,32 @@ mongoose
 const app_name = require('./package.json').name;
 const debug = require('debug')(`${app_name}:${path.basename(__filename).split('.')[0]}`);
 const app = express();
+
+//
+////
+/*Experimenting with the File Upload function*/
+
+var storage = multer.diskStorage({
+  destination: function(req, file, cb) {
+      cb(null, 'uploads/');
+   },
+  filename: function (req, file, cb) {
+      cb(null , file.originalname);
+  }
+});
+
+var upload = multer({ storage: storage })
+
+app.post('/single', upload.single('post'), (req, res) => {
+  try {
+    res.send(req.file);
+  }catch(err) {
+    res.send(400);
+  }
+});
+
+////
+//
 
 // Middleware Setup
 app.use(session({
@@ -55,7 +82,9 @@ app.use(favicon(path.join(__dirname, 'public', 'images', 'favicon.ico')));
 app.locals.title = 'Express - Generated with IronGenerator';
 
 const index = require('./routes/index');
-const user = require('./routes/user')
+const user = require('./routes/user');
+const fileupload = require('./routes/upload')
 app.use('/', index);
 app.use('/', user);
+app.use('/', fileupload);
 module.exports = app;
