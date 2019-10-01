@@ -1,0 +1,33 @@
+:root {
+    background-color: lightgray;
+}
+
+.postDescription{
+    text-align: center;
+    font-size: 2rem;
+    color: black;
+    font-weight: bold;
+    padding: 1rem;
+}
+
+.postImage {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    height: 30%;
+    width: 30%;
+}
+
+.postProperties{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.vote {
+    height: 5%;
+    width: 5%;
+    padding: 0.5rem;
+    margin: 1rem;
+
+}
