@@ -22,6 +22,14 @@ router.get("/sign-Up", (req, res, next) => {
       });
       return;
     }
+
+    if  (!(/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(email))){
+      res.render("signUp", {
+        errorMessage: "Invalid E-Mail Adress"
+      });
+      return;
+    }
+
     User.findOne({ "email": email })
       .then(user => {
         if (user !== null) {
@@ -76,7 +84,6 @@ router.get("/log-In", (req, res, next) => {
           // Save the login in the session!
             req.session.currentUser = user;
             req.app.locals.session = true;
-            session = "hi";
           res.redirect("/");
         } else {
           res.render("login", {
@@ -92,7 +99,7 @@ router.get("/log-In", (req, res, next) => {
   router.post("/logout", (req, res, next) => {
     req.session.destroy((err) => {
       // cannot access session here
-      
+      req.app.locals.profile = false;
       req.app.locals.session = false;
       res.redirect("/");
     });

@@ -54,11 +54,16 @@ app.use(favicon(path.join(__dirname, 'public', 'images', 'favicon.ico')));
 // default value for title local
 app.locals.title = 'Irongag';
 app.locals.session = false;
+app.locals.profile = false;
 
 const index = require('./routes/index');
 const user = require('./routes/user');
 const upload = require('./routes/upload')
+const profile = require('./routes/profile');
+
 app.use('/', index);
 app.use('/', user);
 app.use('/', upload);
+app.use('/', profile);
+
 module.exports = app;

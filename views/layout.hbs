@@ -11,22 +11,39 @@
 </head>
 <body>
 
+<div class="superContainer">
 <div class="navigationBar">
-  <a class="navigationEntry" href="/">Home</a>
+  <a class="navigationEntry" href="/">IronGag</a>
   {{#unless session}}
   <a class="navigationEntry" href="log-In">Login</a>
   <a class="navigationEntry" href="sign-Up">Sign Up</a>
   {{/unless}}
   {{#if session}}
-  <a class="navigationEntry" href="">Profile</a>
+  <a class="navigationEntry" href="profile">Profile</a>
   <a class="navigationEntry" href="upload">+ Upload</a>
   <form action="/logout" method="post">
-  <button type="submit">Log-Out</button>
+  <button class="btn-logout" type="submit">Log-Out</button>
   </form>
   {{/if}}
 </div>
 
+
+<div id ="container">
+    {{#if profile}}
+<div class="navigationBarProfile">
+  <a class="navigationEntryProfile" href="/profile">Post</a>
+  <a class="navigationEntryProfile" href="/profile">Upvotes</a>
+  <a class="navigationEntryProfile" href="/settings">Settings</a>
+</div>
+  {{/if}}
+
+<div class="profileContent">
   {{{body}}}
+  </div>
+</div>
+
+</div>
+
 
 </body>
 </html>

@@ -3,6 +3,7 @@ const router  = express.Router();
 const Post = require("../models/post");
 
 router.get("/upload", (req, res, next) => {
+  req.app.locals.profile = false;
   res.render("upload");
 });
 

@@ -1,12 +1,85 @@
-.navigationBar {
-    background-color: grey;
-    padding: 2rem;
-    font-size: 2rem;
+.btn{
+    color: #fff;
+    background-color: #09f;
+    padding: 0.4rem 0.8rem;
+    height: 1.4rem;
+    border: none;
+    border-radius: 0.1rem;
+    font: 14px/20px -apple-system,BlinkMacSystemFont,Segoe UI,Helvetica Neue,Arial,Helvetica,Geneva,sans-serif;
+    font-weight: 700;
+    cursor: pointer;
+    text-decoration: none;
+    display: inline-block;
+    text-align: center;
+    -webkit-appearance: none;
+    box-sizing: content-box;
 }
 
-.navigationEntry {
-    padding: 0.5rem;
+.link{
+    color: #09f;
     text-decoration: none;
+}
+
+.superContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.navigationBar {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    background-color: rgb(41, 41, 48);
+    padding: 1rem;
+}
+
+
+
+.navigationEntry, .btn-logout {
+    box-shadow: none;
+    padding: 0.5rem;
+    padding-left: 1.5rem;
+    font-size: 1.6rem;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    text-decoration: none;
+    background-color: rgb(41, 41, 48);
+    border: none;
     color: white;
 
+}
+
+.btn-logout:hover, .navigationEntry:hover {
+    color: rgb(180, 179, 179)
+}
+
+#container {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.navigationBarProfile {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    padding: 0.6rem;
+    font-size: 1.6rem;
+}
+
+.navigationEntryProfile {
+    padding: 0.5rem;
+    text-decoration: none;
+    color: rgb(180, 179, 179);
+}
+
+.navigationEntryProfile:hover {
+    color:  rgb(41, 41, 48);
+    border-color: rgb(41, 41, 48);
+}
+
+.profileContent{
+    display: flex;
+    justify-content: center;
 }

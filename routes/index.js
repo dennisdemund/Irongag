@@ -4,6 +4,7 @@ const Post = require("../models/post");
 
 /*
 router.get("/", (req, res, next) => {
+  req.app.locals.profile = false;
   res.render("index");
 });
 */
