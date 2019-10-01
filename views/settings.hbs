@@ -1,26 +1,33 @@
-<div>
-  <h2>Account</h2>
+<body>
+  <div class="settingsFlex">
 
 
-
-
-
-<form action="/settings" method="post">
-  <label for="">Username</label>
-  <input type="text" name="username" value="{{this.username}}">
-
-    <label for="">Email</label>
-  <input type="text" name="email" value="{{this.email}}">
-  <p>Email will not be displayed publicly</p>
-
+  <div class="settingsFlex">
+    <h2>Account Settings</h2>
+  </div>
+  <div class="settingsFlex">
+    <label for="inp" class="inp">
+      <input type="text" id="inp" placeholder="&nbsp;" value="{{this.username}}">
+      <span class="label">Username</span>
+      <span class="border"></span>
+    </label>
+  </div>
+  <div class="settingsFlex">
+    <label for="inp" class="inp">
+    <input type="text" id="inp" placeholder="&nbsp;" value="{{this.email}}">
+    <span class="label">EMail</span>
+    <span class="border"></span>
+  </label>
+  </div>
+<div class="settingsFlex">
   <button class="btn" type="submit">Save Changes</button>
+</div>
+  </div>
 </form>
-
-
-<a class = "link" href="/">Return</a>
+<a class="link" href="/">Return</a>
+</body>
 
 
 {{#if errorMessage}}
 <div class="error-message">{{ errorMessage }}</div>
 {{/if}}
-</div>
