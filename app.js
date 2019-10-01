@@ -60,10 +60,12 @@ const index = require('./routes/index');
 const user = require('./routes/user');
 const upload = require('./routes/upload')
 const profile = require('./routes/profile');
+const gag = require('./routes/gag');
 
 app.use('/', index);
 app.use('/', user);
 app.use('/', upload);
 app.use('/', profile);
+app.use('/', gag);
 
 module.exports = app;
