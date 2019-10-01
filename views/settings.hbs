@@ -1,4 +1,8 @@
-<h2>Account</h2>
+<div>
+  <h2>Account</h2>
+
+
+
 
 
 <form action="/settings" method="post">
@@ -9,13 +13,14 @@
   <input type="text" name="email" value="{{this.email}}">
   <p>Email will not be displayed publicly</p>
 
-  <button type="submit">Save Changes</button>
+  <button class="btn" type="submit">Save Changes</button>
 </form>
 
 
- <button><a href="/">Return</a></button>
+<a class = "link" href="/">Return</a>
 
 
 {{#if errorMessage}}
 <div class="error-message">{{ errorMessage }}</div>
 {{/if}}
+</div>
