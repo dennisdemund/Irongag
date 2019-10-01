@@ -1,6 +1,15 @@
-<h1>Please select your File</h1>
+<h1>Create your own post!</h1>
 <body>
-    <form id="frmUploader" enctype="multipart/form-data" action="upload/" method="post">
-        <input type="file" name="imgUploader" multiple />
-        <input type="submit" name="submit" id="btnSubmit" value="Upload" /> </form>
+    <form id="frmUploader" action="/upload" method="post">
+        <h2>Enter your title here:</h2>
+        <input type="text" name="postTitle"/>
+
+        <h2>Select an URL:</h2>
+        <input type="text" name="urlUpload">
+
+        <h2>Any Tag you would like to add?</h2>
+        <input type="text" name="postTag"/>
+
+        <button type="submit">Create Post</button>
+    </form>
 </body>
