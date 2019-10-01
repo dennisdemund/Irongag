@@ -13,6 +13,7 @@ router.post('/upload', (req, res, next) => {
     name: req.body.postTitle,
     url: req.body.urlUpload,
     tags: req.body.postTag,
+    uploader: req.app.locals.currentUser,
   }).then(() => {
     res.redirect("/");
   })
