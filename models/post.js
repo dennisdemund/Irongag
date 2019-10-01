@@ -7,6 +7,7 @@ const postSchema = new Schema({
   downvotes: [],
   upvotes: [],
   tags: [],
+  comments: [],
   uploader: {
       type: mongoose.Schema.Types.ObjectId,
       ref: 'User'
