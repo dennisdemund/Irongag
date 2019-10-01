@@ -1,0 +1,12 @@
+<section>
+  {{#each posts}}
+    <h3 class="postDescription">{{ this.name }}</h3>
+    <img class="postImage" src={{this.url}} alt="Loading Image">
+<div class="postProperties">
+    <img class="vote" src="\images\thumbsUp.png" alt="Upvote">
+    <img class="vote" src="\images\thumbsDown.png" alt="Downvote">
+</div>
+
+
+  {{/each}}
+</section>
