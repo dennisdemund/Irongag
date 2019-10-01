@@ -1,3 +1,4 @@
+<div>
 <h2>Become a member</h2>
 
 <form action="/sign-Up" method="post">
@@ -8,15 +9,16 @@
   <input type="text" name="email">
 
   <label for="">Password:</label>
-  <input type="text" name="password">
+  <input type="password" name="password">
 
-  <button type="submit">Sign Up</button>
+  <button class="btn" type="submit">Sign Up</button>
 </form>
 
 
- <button><a href="/">Return</a></button>
+ <a class="link" href="/">Return</a>
 
 
 {{#if errorMessage}}
 <div class="error-message">{{ errorMessage }}</div>
 {{/if}}
+</div>

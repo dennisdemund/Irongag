@@ -9,8 +9,9 @@
 </head>
 <body>
 
+<div class="superContainer">
 <div class="navigationBar">
-  <a class="navigationEntry" href="/">Home</a>
+  <a class="navigationEntry" href="/">IronGag</a>
   {{#unless session}}
   <a class="navigationEntry" href="log-In">Login</a>
   <a class="navigationEntry" href="sign-Up">Sign Up</a>
@@ -19,7 +20,7 @@
   <a class="navigationEntry" href="profile">Profile</a>
   <a class="navigationEntry" href="upload">+ Upload</a>
   <form action="/logout" method="post">
-  <button type="submit">Log-Out</button>
+  <button class="btn-logout" type="submit">Log-Out</button>
   </form>
   {{/if}}
 </div>
@@ -34,9 +35,11 @@
 </div>
   {{/if}}
 
-<div>
+<div class="profileContent">
   {{{body}}}
   </div>
+</div>
+
 </div>
 
 

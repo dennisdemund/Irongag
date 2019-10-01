@@ -1,19 +1,22 @@
+<div>
 <h2>Login</h2>
 <p>Log in with your email address</p>
+
 
 <form action="/log-In" method="post">
   <label for="">E-Mail</label>
   <input type="text" name="email">
 
   <label for="">Password</label>
-  <input type="text" name="password">
+  <input type="password" name="password">
 
-  <button type="submit">Log in</button>
+  <button class="btn" type="submit">Log in</button>
 </form>
 
 
- <button><a href="/">Return</a></button>
+ <a class="link" href="/">Return</a>
 
 {{#if errorMessage}}
 <div class="error-message">{{ errorMessage }}</div>
 {{/if}}
+</div>
