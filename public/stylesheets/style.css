@@ -10,3 +10,22 @@
     color: white;
 
 }
+
+#container {
+    display: flex;
+    flex-direction: row;
+}
+
+.navigationBarProfile {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    padding: 2rem;
+    font-size: 2rem;
+}
+
+.navigationEntryProfile {
+    padding: 0.5rem;
+    text-decoration: none;
+    color: grey;
+}
