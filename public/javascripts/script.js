@@ -22,7 +22,7 @@ document.addEventListener('scroll', () => {
     element.addEventListener('click', () => {
         //let buttonType = event.target.innerHTML; thumb_up thumb_down
         let currentClass = event.target.parentNode.classList[0];
-        let ortherClass = event.target.parentNode.parentNode.parentNode.childNodes;
+        let ortherClass = event.target.parentNode.parentNode.childNodes;
         if (currentClass === "btn-post") {
             ortherClass[1].classList.remove("btn-post-clicked");
             ortherClass[1].classList.add("btn-post");
