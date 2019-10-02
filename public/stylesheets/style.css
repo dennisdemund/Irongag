@@ -244,3 +244,9 @@ body {
       display: flex;
       flex-direction: column;
   }
+
+  .commentList {
+    border: 5px solid #1C6EA4;
+    border-radius: 0px 40px 40px 40px;
+    text-align: center; 
+  }
