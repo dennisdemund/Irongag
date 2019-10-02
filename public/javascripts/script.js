@@ -1,3 +1,5 @@
+
+
 document.addEventListener('scroll', () => {
 
     let navbar = document.getElementsByClassName("navigationBar");
@@ -37,4 +39,12 @@ document.addEventListener('scroll', () => {
       })
 
   })
-  
+  const button = document.getElementsByClassName('btn-post');
+  Array.from(button).forEach(element => {
+    element.addEventListener('click',(evnt) => {
+      console.log(evnt.target.parentNode.getAttribute('url'))
+      axios.post(evnt.target.parentNode.getAttribute('url')).then(reponseFromBackend => {
+        console.log(reponseFromBackend);
+      })
+    })
+  })
