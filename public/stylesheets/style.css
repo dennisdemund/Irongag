@@ -1,6 +1,13 @@
+
 h3{
     margin: 1px;
     margin-top: 35px;
+}
+
+
+h2 {
+    color: #09f;
+    font-size: 2rem;
 }
 
 .btn{
@@ -44,6 +51,11 @@ h3{
     font-size: 2rem;
 }
 
+.settingsFlex {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
 
 .superContainer {
     display: flex;
@@ -58,8 +70,6 @@ h3{
     background-color: rgb(41, 41, 48);
     padding: 1rem;
 }
-
-
 
 .navigationEntry, .btn-logout {
     box-shadow: none;
@@ -82,6 +92,10 @@ h3{
     display: flex;
     justify-content: center;
     flex-direction: column;
+}
+
+#createPost {
+    margin: 1rem 0;
 }
 
 .navigationBarProfile {
@@ -144,16 +158,29 @@ h3{
     top: 0;
     width: 100%;
   }
+#saveChanges {
+    padding: 0.3rem;
+    margin:0.3rem;
+}
+
+body {
+    display: grid;
+    font-family: Avenir;
+    -webkit-text-size-adjust: 100%;
+    -webkit-font-smoothing: antialiased;
+}
+
 
 .inp {
+    box-sizing: border-box;
     position: relative;
-    margin: auto;
+    margin: 2rem 0;
     width: 100%;
-    max-width: 280px;
-  }
+    max-width: 40rem;
+}
   .inp .label {
     position: absolute;
-    top: 16px;
+    top: 2rem;
     left: 0;
     font-size: 16px;
     color: #9098a9;
@@ -177,8 +204,8 @@ h3{
     width: 100%;
     border: 0;
     font-family: inherit;
-    padding: 12px 0;
-    height: 48px;
+    padding: 1rem 0;
+    height: 1rem;
     font-size: 16px;
     font-weight: 500;
     border-bottom: 2px solid #c8ccd4;
