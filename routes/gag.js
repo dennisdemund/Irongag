@@ -44,4 +44,15 @@ router.get("/gag/:gagId", (req, res, next) => {
     }) 
   });
 
+  router.post("/gag/:gagId", (req, res, next) => {
+    console.log(req.body.comment);
+    Post.update({_id: req.params.gagId}, {$push: {comments: req.body.comment}})
+    .then((thePost) => {
+      res.redirect(`/gag/${req.params.gagId}`);
+    })
+    .catch((error) => {
+      console.log(error);
+    });
+  });
+
 module.exports = router;
