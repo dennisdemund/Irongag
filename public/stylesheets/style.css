@@ -27,7 +27,7 @@ h2 {
     box-sizing: content-box;
 }
 
-.btn-post, .btn-post-clicked{
+.btn-post, .btn-post-clicked, .btn-comment {
     border: none;
     background-color: #fff;
     color:  rgb(180, 179, 179);
@@ -37,7 +37,7 @@ h2 {
     color: #09f;
 }
 
-.btn-post:hover{
+.btn-post:hover, .btn-comment:hover{
     color:  rgb(41, 41, 48);
 }
 
