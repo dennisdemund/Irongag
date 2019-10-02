@@ -12,4 +12,8 @@ router.get("/gag/:gagId", (req, res, next) => {
     }) 
   });
 
+  router.post('/gag/:gagId', (req, res, next) => {
+    Post.update({ }, {$push: {comments: req.body.comment}});
+  });
+
 module.exports = router;

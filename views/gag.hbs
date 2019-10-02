@@ -1,21 +1,28 @@
 <section>
-
-<div>
+  <div>
     <h3 class="postDescription">{{ post.name }}</h3>
     <p>TAGS: {{post.tags}}</p>
-     <div class="postProperties">
-        <button class="btn-post"><i class="material-icons">thumb_up</i></button>
-        <button class="btn-post"><i class="material-icons">thumb_down</i></button>
-    </div>
     <img class="postImage" src={{post.url}} alt="Loading Image">
-</div>
-<div>
-    <label for="">Comments</label>
-  <input type="text" name="comment" value="Write comments...">
+      <form action="/gag/{{this._id}}" method="post">
 
-  <button class="btn" type="submit">Post</button>
-</div>
+        <div class="postProperties">
+          <button class="btn-post"><i class="material-icons">thumb_up</i></button>
+          <button class="btn-post"><i class="material-icons">thumb_down</i></button>
+        </div>
+      </div>
+      <div>
+        <label for=""></label>
+        <input type="text" name="comment" value="Insert your comment...">
+        <button class="btn" type="submit">Post</button>
+      </div>
+      </form>
+  <h1>Check the latest comments here</h1>
 
-
-
+  {{#each post.comments}}
+  <div>
+    <h1>Testtext</h1>
+    <a href="gag/{{this._id}}"><img class="postImage" src={{this.url}} alt="Loading Image"></a>
+    </div>
+  </div>
+  {{/each}}
 </section>

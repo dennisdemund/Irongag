@@ -4,7 +4,6 @@ h3{
     margin-top: 35px;
 }
 
-
 h2 {
     color: #09f;
     font-size: 2rem;
@@ -235,5 +234,5 @@ body {
 
   .settingsFlex {
       display: flex;
-      flex-direction: row;
+      flex-direction: column;
   }
