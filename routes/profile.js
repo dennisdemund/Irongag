@@ -18,9 +18,9 @@ router.get("/settings", (req, res, next) => {
 });
 
 router.get("/userPosts", (req, res, next) => {
-  Post.find({uploader: req.session.currentUser}, (err, posts) => {
+  Post.find({uploader: req.session.currentUser} , (err, posts) => {
     res.render("userPosts", {posts});
-  })  
+  }) 
 })
 
 router.post("/settings", (req, res, next) => {

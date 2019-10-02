@@ -1,22 +1,23 @@
 <div>
-<h2>Login</h2>
-<p>Log in with your email address</p>
+<h2>Log in with your email address</h2>
 
+  <form action="/log-in" method="post">
+  <div class="settingsFlex">
+<label for="inp" class="inp">
+      <input type="text" id="inp" name="email" placeholder="&nbsp;">
+      <span class="label">E-Mail</span>
+      <span class="border"></span>
+    </label>
 
-<form action="/log-In" method="post">
-  <label for="">E-Mail</label>
-  <input type="text" name="email">
-
-  <label for="">Password</label>
-  <input type="password" name="password">
-
-  <button class="btn" type="submit">Log in</button>
+    <label for="inp" class="inp">
+      <input type="password" id="inp" name="password" placeholder="&nbsp;">
+      <span class="label">Password</span>
+      <span class="border"></span>
+    </label>
+  <button class="btn" id="saveChanges" type="submit">Login</button>
+  </div>
+  <a class="link" href="/">Back to Index Page</a>
 </form>
-
-
- <a class="link" href="/">Return</a>
-
 {{#if errorMessage}}
 <div class="error-message">{{ errorMessage }}</div>
 {{/if}}
-</div>
