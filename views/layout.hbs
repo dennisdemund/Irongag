@@ -6,6 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>{{title}}</title>
   <link rel="stylesheet" href="/stylesheets/style.css" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
 
 </head>
 <body>
@@ -14,12 +15,12 @@
 <div class="navigationBar">
   <a class="navigationEntry" href="/">IronGag</a>
   {{#unless session}}
-  <a class="navigationEntry" href="log-In">Login</a>
-  <a class="navigationEntry" href="sign-Up">Sign Up</a>
+  <a class="navigationEntry" href="/log-In">Login</a>
+  <a class="navigationEntry" href="/sign-Up">Sign Up</a>
   {{/unless}}
   {{#if session}}
-  <a class="navigationEntry" href="profile">Profile</a>
-  <a class="navigationEntry" href="upload">+ Upload</a>
+  <a class="navigationEntry" href="/profile">Profile</a>
+  <a class="navigationEntry" href="/upload">+ Upload</a>
   <form action="/logout" method="post">
   <button class="btn-logout" type="submit">Log-Out</button>
   </form>
@@ -43,6 +44,6 @@
 
 </div>
 
-
+  <script src="/javascripts/script.js"></script>
 </body>
 </html>

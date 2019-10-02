@@ -1,8 +1,15 @@
 
+h3{
+    margin: 1px;
+    margin-top: 35px;
+}
+
+
 h2 {
     color: #09f;
     font-size: 2rem;
 }
+
 .btn{
     color: #fff;
     background-color: #09f;
@@ -18,6 +25,20 @@ h2 {
     text-align: center;
     -webkit-appearance: none;
     box-sizing: content-box;
+}
+
+.btn-post, .btn-post-clicked{
+    border: none;
+    background-color: #fff;
+    color:  rgb(180, 179, 179);
+}
+
+.btn-post-clicked {
+    color: #09f;
+}
+
+.btn-post:hover{
+    color:  rgb(41, 41, 48);
 }
 
 .link{
@@ -103,19 +124,19 @@ h2 {
 }
 
 .postDescription{
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
     text-align: center;
     font-size: 2rem;
     color: black;
     font-weight: bold;
-    padding: 1rem;
 }
 
 .postImage {
+    border: 0;
     display: block;
     margin-left: auto;
     margin-right: auto;
-    height: 20%;
-    width: 20%;
+    width: 30%;
 }
 
 .postProperties{
@@ -132,6 +153,11 @@ h2 {
 
 }
 
+.sticky {
+    position: fixed;
+    top: 0;
+    width: 100%;
+  }
 #saveChanges {
     padding: 0.3rem;
     margin:0.3rem;
@@ -207,3 +233,7 @@ body {
     transform: scaleX(1);
   }
 
+  .settingsFlex {
+      display: flex;
+      flex-direction: row;
+  }

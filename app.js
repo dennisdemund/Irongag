@@ -27,7 +27,7 @@ const app = express();
 // Middleware Setup
 app.use(session({
  secret: "basic-auth-secret",
- cookie: { maxAge: 60000 },
+ cookie: { maxAge: 6000000 },
  store: new MongoStore({
    mongooseConnection: mongoose.connection,
    ttl: 24 * 60 * 60 // 1 day
@@ -61,10 +61,12 @@ const index = require('./routes/index');
 const user = require('./routes/user');
 const upload = require('./routes/upload')
 const profile = require('./routes/profile');
+const gag = require('./routes/gag');
 
 app.use('/', index);
 app.use('/', user);
 app.use('/', upload);
 app.use('/', profile);
+app.use('/', gag);
 
 module.exports = app;
