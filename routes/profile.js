@@ -24,7 +24,7 @@ router.get("/userPosts", (req, res, next) => {
 })
 
 router.get("/userUpvotes", (req, res, next) => {
-  Post.find({upvotes: req.session.currentUser} , (err, posts) => {
+  Post.find({upvotes: req.session.currentUser._id} , (err, posts) => {
     res.render("userUpvotes", {posts});
   }) 
 })
