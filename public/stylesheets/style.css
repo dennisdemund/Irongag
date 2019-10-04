@@ -112,6 +112,7 @@ h2 {
     color: rgb(180, 179, 179);
 }
 
+
 .navigationEntryProfile:hover {
     color:  rgb(41, 41, 48);
     border-color: rgb(41, 41, 48);
@@ -229,6 +230,7 @@ body {
     outline: none;
   }
   .inp input:focus + span {
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
     color: #07f;
     transform: translateY(-26px) scale(0.75);
   }
@@ -242,7 +244,8 @@ body {
   }
 
   .commentList {
-    border: 5px solid #1C6EA4;
+    border: 3px solid rgb(41, 41, 48);
+    padding: 1.8rem 0.8rem;
     border-radius: 0px 40px 40px 40px;
     text-align: center; 
   }

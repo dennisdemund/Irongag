@@ -2,6 +2,9 @@ const express = require('express');
 const router  = express.Router();
 const Post = require("../models/post");
 
+
+      
+
 router.post("/like/:postId", (req, res, next) => {
   Post.update({_id: req.params.postId}, {$push:{ upvotes: req.session.currentUser._id}})
   .then((user) => {
