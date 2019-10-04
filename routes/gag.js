@@ -55,4 +55,45 @@ router.get("/gag/:gagId", (req, res, next) => {
     });
   });
 
+
+  router.post("/check/like/:postId", (req, res, next) => {
+    Post.findById(req.params.postId)
+    .then(thePost => {
+     let arr = thePost.upvotes;
+     let clicked = false;
+     arr.forEach(element => {
+     if (element === req.session.currentUser._id){
+        clicked = true;
+     }
+     });
+     res.send(JSON.stringify({"clicked": clicked})) ;
+
+
+    })
+    .catch(error => {
+      console.log('Error while retrieving Post details: ', error);
+    })
+
+  });
+
+  router.post("/check/dislike/:postId", (req, res, next) => {
+    Post.findById(req.params.postId)
+    .then(thePost => {
+     let arr = thePost.downvotes;
+     let clicked = false;
+     arr.forEach(element => {
+     if (element === req.session.currentUser._id){
+        clicked = true;
+     }
+     });
+     console.log(clicked);
+     res.send(JSON.stringify({"clicked": clicked})) ;
+
+    })
+    .catch(error => {
+      console.log('Error while retrieving Post details: ', error);
+    })
+
+  });
+
 module.exports = router;
