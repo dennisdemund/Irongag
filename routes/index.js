@@ -7,6 +7,7 @@ router.get("/", (req, res, next) => {
     req.app.locals.profile = false;
     res.render('index', {posts})
   })
+  
 });
 
 module.exports = router;

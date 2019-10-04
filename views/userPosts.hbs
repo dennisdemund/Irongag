@@ -1,6 +1,8 @@
+
 <section>
   {{#each posts}}
     <h3 class="postDescription">{{ this.name }}</h3>
+
     <a class="fakeLink" href="gag/{{this._id}}">
     <img class="postImage" src={{this.url}} alt="Loading Image"></a>
 <div class="postProperties">
@@ -8,7 +10,6 @@
     <button class="btn-post"><i class="material-icons">thumb_down</i></button>
     <button class="btn-post" ><i class="material-icons">comment</i></button>
 </div>
-
 
   {{/each}}
 </section>
