@@ -1,5 +1,3 @@
-
-
 document.addEventListener('scroll', () => {
 
     let navbar = document.getElementsByClassName("navigationBar");

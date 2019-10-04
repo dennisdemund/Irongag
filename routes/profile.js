@@ -23,6 +23,12 @@ router.get("/userPosts", (req, res, next) => {
   }) 
 })
 
+router.get("/userUpvotes", (req, res, next) => {
+  Post.find({upvotes: req.session.currentUser} , (err, posts) => {
+    res.render("userUpvotes", {posts});
+  }) 
+})
+
 router.post("/settings", (req, res, next) => {
   const username = req.body.username;
   const email = req.body.email;
