@@ -50,24 +50,29 @@ document.addEventListener('scroll', () => {
 
   
 let allLikes = document.getElementsByClassName("btn-post");
+let logout = document.getElementsByClassName("btn-logout");
 
 document.addEventListener('DOMContentLoaded', () => {
+if (logout.length != 0 && allLikes.length != 0){
+  Array.from(allLikes).forEach(element => {
 
-Array.from(allLikes).forEach(element => {
-
- let url =  element.getAttribute('url');
- url = "/check" + url;
-
- axios.post(url).then(reponseFromBackend => {
-  console.log("body?: ",reponseFromBackend.data.clicked);
-  if (reponseFromBackend.data.clicked === true){    
-    element.classList.remove("btn-post");
-    element.classList.add("btn-post-clicked");
+    let url =  element.getAttribute('url');
+    url = "/check" + url;
+   
+    axios.post(url).then(reponseFromBackend => {
+     console.log("body?: ",reponseFromBackend.data.clicked);
+     if (reponseFromBackend.data.clicked === true){    
+       element.classList.remove("btn-post");
+       element.classList.add("btn-post-clicked");
+      }
+   })
+   .catch(error => {
+     console.log(error);
    }
-})
-.catch(error => {
-  console.log(error);
+     )})
+
 }
-  )})
+
+
   
   }, false);

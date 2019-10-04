@@ -96,4 +96,18 @@ router.get("/gag/:gagId", (req, res, next) => {
 
   });
 
+
+  router.post("/delete/:postId", (req, res, next) => {
+    Post.deleteOne({_id: req.params.postId})
+    .then(thePost => {
+    console.log("Delete happens");
+     res.redirect("/userPosts") ;
+
+    })
+    .catch(error => {
+      console.log('Error while deleting Post: ', error);
+    })
+
+  });
+
 module.exports = router;
