@@ -46,3 +46,28 @@ document.addEventListener('scroll', () => {
       })
     })
   })
+
+
+  
+let allLikes = document.getElementsByClassName("btn-post");
+
+document.addEventListener('DOMContentLoaded', () => {
+
+Array.from(allLikes).forEach(element => {
+
+ let url =  element.getAttribute('url');
+ url = "/check" + url;
+
+ axios.post(url).then(reponseFromBackend => {
+  console.log("body?: ",reponseFromBackend.data.clicked);
+  if (reponseFromBackend.data.clicked === true){    
+    element.classList.remove("btn-post");
+    element.classList.add("btn-post-clicked");
+   }
+})
+.catch(error => {
+  console.log(error);
+}
+  )})
+  
+  }, false);
