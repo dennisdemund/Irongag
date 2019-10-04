@@ -55,7 +55,7 @@ app.use(favicon(path.join(__dirname, 'public', 'images', 'favicon.ico')));
 app.locals.title = 'Irongag';
 app.locals.session = false;
 app.locals.profile = false;
-app.locals.currentUser;
+app.locals.currentUser = 'Not logged in';
 
 const index = require('./routes/index');
 const user = require('./routes/user');
